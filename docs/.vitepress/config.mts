@@ -1,11 +1,11 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  srcDir: "src",
+  srcDir: 'src',
 
-  title: "SE Roadmap",
-  description: "Cool view for concepts and tasks",
+  title: 'SE Roadmap',
+  description: 'Cool view for concepts and tasks',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -22,7 +22,7 @@ export default defineConfig({
         items: [
           {
             text: 'Concepts',
-            link: '/modules/client-server-architecture/concepts/'
+            link: '/modules/client-server-architecture/concepts/',
           },
           {
             text: 'Practice',
@@ -32,19 +32,19 @@ export default defineConfig({
             items: [
               {
                 text: 'Local Network Config',
-                link: '/local-network-config'
+                link: '/local-network-config',
               },
               {
                 text: 'Remote Server Availability',
-                link: '/remote-server-availability'
+                link: '/remote-server-availability',
               },
               {
                 text: 'Website Availability',
-                link: '/website-availability'
-              }
-            ]
-          }
-        ]
+                link: '/website-availability',
+              },
+            ],
+          },
+        ],
       },
       {
         text: 'Backend',
@@ -53,19 +53,30 @@ export default defineConfig({
         items: [
           {
             text: 'Concepts',
-            link: '/concepts'
+            link: '/concepts',
           },
           {
             text: 'Practice',
             link: '/practice',
             items: [],
-          }
-        ]
-      }
+          },
+        ],
+      },
+      {
+        text: 'Algorithms',
+        link: '/modules/algorithms',
+        base: '/modules/algorithms',
+        items: [
+          {
+            text: 'Hashmap',
+            link: '/hashmap',
+          },
+        ],
+      },
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/booobryyyk/se_roadmap' }
-    ]
-  }
-})
+      { icon: 'github', link: 'https://github.com/booobryyyk/se_roadmap' },
+    ],
+  },
+});

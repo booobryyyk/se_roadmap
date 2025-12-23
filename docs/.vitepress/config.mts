@@ -73,6 +73,21 @@ export default defineConfig({
           },
         ],
       },
+      {
+        text: 'Docker',
+        link: '/modules/docker',
+        base: '/modules/docker',
+        items: [
+          {
+            text: 'Ubuntu htop',
+            link: '/ubuntu-htop',
+          },
+          {
+            text: 'Hello world container',
+            link: '/hello-world-container',
+          },
+        ],
+      },
     ],
 
     socialLinks: [

@@ -17,7 +17,7 @@ features:
     details: Some notes for algorithms and data structure learning
     link: /modules/algorithms/hashmap
   - title: Docker
-    link: /modules/docker/ubuntu-htop
+    link: /modules/docker/practice/ubuntu-htop
   - title: Databases
     details: Transactions, isolation levels, indexes and performance
     link: /modules/databases/practice/transactions

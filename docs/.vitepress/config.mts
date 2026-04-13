@@ -76,7 +76,7 @@ export default defineConfig({
       {
         text: 'Docker',
         link: '/modules/docker',
-        base: '/modules/docker',
+        base: '/modules/docker/practice',
         items: [
           {
             text: 'Ubuntu htop',

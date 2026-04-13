@@ -1,0 +1,1 @@
+SELECT * FROM users WHERE email='admin@mail.com'; -- AND password=12345678-HAHAHAHA

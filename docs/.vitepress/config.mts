@@ -88,6 +88,36 @@ export default defineConfig({
           },
         ],
       },
+      {
+        text: 'Databases',
+        link: '/modules/databases',
+        base: '/modules/databases/practice',
+        items: [
+          {
+            text: 'Transactions',
+            link: '/transactions',
+          },
+          {
+            text: 'Indexes & Performance',
+            link: '/indexes_performance',
+          },
+        ],
+      },
+      {
+        text: 'Vulnerabilities',
+        link: '/modules/vulnerabilities',
+        base: '/modules/vulnerabilities',
+        items: [
+          {
+            text: 'SQL Injection',
+            link: '/sql-injection',
+          },
+          {
+            text: 'XSS',
+            link: '/xss',
+          },
+        ],
+      },
     ],
 
     socialLinks: [

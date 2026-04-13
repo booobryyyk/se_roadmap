@@ -18,4 +18,10 @@ features:
     link: /modules/algorithms/hashmap
   - title: Docker
     link: /modules/docker/ubuntu-htop
+  - title: Databases
+    details: Transactions, isolation levels, indexes and performance
+    link: /modules/databases/practice/transactions
+  - title: Vulnerabilities
+    details: SQL injection, XSS and other common web security vulnerabilities
+    link: /modules/vulnerabilities/sql-injection
 ---

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XSS Demonstration</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+      }
+      .block {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+      }
+      .block h2 {
+        margin-top: 0;
+      }
+      .vulnerable {
+        border-color: lightcoral;
+        background-color: #fdecea;
+      }
+      .protected {
+        border-color: lime;
+        background-color: #eafaf1;
+      }
+      .protected-formatted {
+        border-color: skyblue;
+        background-color: #ebf5fb;
+      }
+      .content {
+        padding: 10px;
+        background: white;
+        border-radius: 4px;
+        min-height: 30px;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.3.1/dist/purify.min.js"></script>
+  </head>
+  <body>
+    <h1>XSS Vulnerability Demonstration</h1>
+
+    <div class="block vulnerable">
+      <h2>Block 1: Vulnerable Rendering</h2>
+      <p>Uses innerHTML without sanitization - XSS will execute</p>
+      <div id="vulnerable" class="content"></div>
+    </div>
+
+    <div class="block protected">
+      <h2>Block 2: Protected Rendering</h2>
+      <p>Uses textContent - all HTML is escaped</p>
+      <div id="protected" class="content"></div>
+    </div>
+
+    <div class="block protected-formatted">
+      <h2>Block 3: Protected Rendering with Formatting</h2>
+      <p>Allows only safe tags: &lt;b&gt;, &lt;i&gt;, &lt;img&gt;</p>
+      <div id="protected-formatted" class="content"></div>
+    </div>
+
+    <script>
+      const COMMENT = `<img src="x" onerror="alert('Hello!')"><b>Bold</b> and <i>italic</i> text`;
+
+      // Block 1: vulnerable rendering
+      document.getElementById('vulnerable').innerHTML = COMMENT;
+
+      // Block 2: Protected rendering
+      document.getElementById('protected').textContent = COMMENT;
+
+      // Block 3: protected rendering with text formatting
+      document.getElementById('protected-formatted').innerHTML =
+        DOMPurify.sanitize(COMMENT, { ALLOWED_TAGS: ['b', 'i', 'img'] });
+    </script>
+  </body>
+</html>
